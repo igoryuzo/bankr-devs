@@ -19,12 +19,32 @@ export default function PartnerForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setSubmitting(false);
-    setSubmitted(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          project_name: formData.projectName,
+          eoa_address: formData.eoaAddress,
+          description: formData.description,
+          telegram_handle: formData.telegramHandle,
+        }),
+      });
+
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (field: keyof FormData, value: string) => {
@@ -113,6 +133,10 @@ export default function PartnerForm() {
           className={inputClass}
         />
       </div>
+
+      {error && (
+        <p className="text-red-400 text-xs">{error}</p>
+      )}
 
       <div className="pt-2">
         <button
