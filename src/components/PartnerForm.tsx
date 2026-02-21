@@ -5,7 +5,6 @@ import { useState, type FormEvent } from "react";
 interface FormData {
   projectName: string;
   eoaAddress: string;
-  teamMembers: string;
   description: string;
   telegramHandle: string;
 }
@@ -14,7 +13,6 @@ export default function PartnerForm() {
   const [formData, setFormData] = useState<FormData>({
     projectName: "",
     eoaAddress: "",
-    teamMembers: "",
     description: "",
     telegramHandle: "",
   });
@@ -86,20 +84,6 @@ export default function PartnerForm() {
         <p className="text-text-muted text-[10px] mt-1.5">
           Make sure you retain access to the private key
         </p>
-      </div>
-
-      <div>
-        <label className="block text-text-secondary text-xs mb-2">
-          Team Members
-        </label>
-        <textarea
-          required
-          value={formData.teamMembers}
-          onChange={(e) => handleChange("teamMembers", e.target.value)}
-          placeholder="List your team members"
-          rows={3}
-          className={`${inputClass} resize-none`}
-        />
       </div>
 
       <div>
