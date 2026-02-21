@@ -12,7 +12,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-text-primary font-bold text-lg tracking-widest">BANKR</span>
           <a
-            href="https://docs.bankr.bot"
+            href="https://docs.bankr.bot/token-launching/partner-api"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted text-xs uppercase tracking-wider hover:text-accent transition-colors"
@@ -56,7 +56,7 @@ export default function Home() {
             Bankr {new Date().getFullYear()}
           </span>
           <div className="flex items-center gap-5">
-            <a href="https://docs.bankr.bot" target="_blank" rel="noopener noreferrer" className="text-text-muted text-[10px] hover:text-accent transition-colors">
+            <a href="https://docs.bankr.bot/token-launching/partner-api" target="_blank" rel="noopener noreferrer" className="text-text-muted text-[10px] hover:text-accent transition-colors">
               Docs
             </a>
             <a href="https://github.com/BankrBot" target="_blank" rel="noopener noreferrer" className="text-text-muted text-[10px] hover:text-accent transition-colors">

@@ -8,10 +8,6 @@ export const metadata: Metadata = {
   title: "BANKR | Partner Deploy API",
   description:
     "Deploy tokens on behalf of your users via a single REST endpoint. Get your partner API key and start launching tokens.",
-  icons: {
-    icon: "/bnkr.svg",
-    apple: "/bnkr.svg",
-  },
   openGraph: {
     title: "BANKR | Partner Deploy API",
     description:
