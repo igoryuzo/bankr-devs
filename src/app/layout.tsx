@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://bankr.bot"
+    "https://bankr-api.vercel.app"
   ),
   title: "BANKR | Partner Deploy API",
   description:
